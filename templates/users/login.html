@@ -1,0 +1,14 @@
+<!-- templates/users/login.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+{% if error %}
+<p><strong>Invalid email or password.</strong></p>
+{% endif %}
+<h2>Log In</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+</form>
+{% endblock content %}
